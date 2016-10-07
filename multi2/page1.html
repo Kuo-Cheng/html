@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page 1</title>
+        <script src="js/lib/require.js"></script>
+        <script>
+            //Load common code that includes config, then load the app
+            //logic for this page. Do the requirejs calls here instead of
+            //a separate file so after a build there are only 2 HTTP
+            //requests instead of three.
+            
+			
+			
+			var ctx1;
+			var ctx2;
+			
+			function runPage1(){
+				ctx2 = null;
+				ctx1 = requirejs(['./js/common'], function (common) {
+					//js/common sets the baseUrl to be js/ so
+					//can just ask for 'app/main1' here instead
+					//of 'js/app/main1'
+					requirejs(['app/main1']);
+				});
+				console.log("runPage1!!!");
+			}
+			
+			function runPage2(){
+				ctx1= null;
+				var ctx2 = requirejs(['./js/common'], function (common) {
+                //js/common sets the baseUrl to be js/ so
+                //can just ask for 'app/main2' here instead
+                //of 'js/app/main2'
+					requirejs(['app/main2']);
+				});
+				console.log("run page 2!!!");
+			}
+			
+			
+			
+        </script>
+</head>
+<body>
+<br/>
+<input type="button" onclick="runPage1();" value="Run Page1!">
+&nbsp;
+<input type="button" onclick="runPage2();" value="Run Page2!">
+<br/>
+<a href="page2.html">Go to Page 2</a>
+</body>
+</html>
