@@ -9,31 +9,30 @@
             //a separate file so after a build there are only 2 HTTP
             //requests instead of three.
             
-			
-			
+
 			var ctx1;
 			var ctx2;
 			
 			function runPage1(){
 				ctx2 = null;
-				ctx1 = requirejs(['./js/common'], function (common) {
+				ctx1 = requirejs(['./js/common1'], function (common) {
 					//js/common sets the baseUrl to be js/ so
 					//can just ask for 'app/main1' here instead
 					//of 'js/app/main1'
 					requirejs(['app/main1']);
 				});
-				console.log("runPage1!!!");
+				console.log("runPage1!!!"+jQuery.fn.jquery);
 			}
 			
 			function runPage2(){
 				ctx1= null;
-				var ctx2 = requirejs(['./js/common'], function (common) {
+				var ctx2 = requirejs(['./js/common2'], function (common) {
                 //js/common sets the baseUrl to be js/ so
                 //can just ask for 'app/main2' here instead
                 //of 'js/app/main2'
 					requirejs(['app/main2']);
 				});
-				console.log("run page 2!!!");
+				console.log("run page 2!!!"+jQuery.fn.jquery);
 			}
 			
 			
