@@ -1,0 +1,115 @@
+<!--
+
+Point Spread |	Between Players	|	Expected Result(Higher Rated Player Wins: number of points exchanged)|	Upset Result(Lower Rated Player Wins: number of points exchanged)
+0 - 12			8						8
+13 - 37			7						10
+38 - 62			6						13
+63 - 87			5						16
+88 - 112		4						20
+113 - 137		3						25
+138 - 162		2						30
+163 - 187		2						35
+188 - 212		1						40
+213 - 237		1						45
+238 and up		0						50
+
+-->
+<html>
+<head>
+<script>
+/**
+* Winner Name or id:
+* Loser Name or id:
+* Winner score: w_score
+* Loser scrore: l_score
+*/
+function countRating(w_score,l_score){
+	var wrs_score = 0;
+	var lrs_score = 0;
+	var diffScore=0;
+	diffScore = w_score-l_score;
+	//alert(diffScore);
+	var absDiffScore = Math.abs(diffScore);
+	var netScore = 0;
+	if(absDiffScore>=0 && absDiffScore<=12){
+		netScore = 8;
+	}else if(absDiffScore>=13 && absDiffScore<=37){
+		if(diffScore>0){
+			netScore = 7;
+		}else{
+			netScore = 10;
+		}
+	}else if(absDiffScore>=38 && absDiffScore<=62){
+		if(diffScore>0){
+			netScore = 6;
+		}else{
+			netScore = 13;
+		}
+	}else if(absDiffScore>=63 && absDiffScore<=87){
+		if(diffScore>0){
+			netScore = 5;
+		}else{
+			netScore = 16;
+		}
+	}else if(absDiffScore>=88 && absDiffScore<=112){
+		if(diffScore>0){
+			netScore = 4;
+		}else{
+			netScore = 20;
+		}
+	}else if(absDiffScore>=113 && absDiffScore<=137){
+		if(diffScore>0){
+			netScore = 3;
+		}else{
+			netScore = 25;
+		}
+	}else if(absDiffScore>=138 && absDiffScore<=162){
+		if(diffScore>0){
+			netScore = 2;
+		}else{
+			netScore = 30;
+		}
+	}else if(absDiffScore>=163 && absDiffScore<=187){
+		if(diffScore>0){
+			netScore = 2;
+		}else{
+			netScore = 35;
+		}
+	}else if(absDiffScore>=188 && absDiffScore<=212){
+		if(diffScore>0){
+			netScore = 1;
+		}else{
+			netScore = 40;
+		}
+	}else if(absDiffScore>=213 && absDiffScore<=237){
+		if(diffScore>0){
+			netScore = 1;
+		}else{
+			netScore = 45;
+		}
+	}else if(absDiffScore>237 ){
+		if(diffScore>0){
+			netScore = 0;
+		}else{
+			netScore = 50;
+		}
+	}
+	return netScore;
+}
+
+function callCountRating(scoreWin, scoreLose){
+	var rs = countRating(scoreWin, scoreLose);
+	alert(rs);
+}
+</script>
+</head>
+<body>
+<form>
+win:<input name="winTxt" type="text"><br>
+
+lose:<input name="loseTxt" type="text"><br>
+
+<input type="button" onclick="callCountRating(form.winTxt.value,form.loseTxt.value)">
+</form>
+</body>
+</html>
