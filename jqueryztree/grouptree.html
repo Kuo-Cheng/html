@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE></TITLE>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="grouptree.css" type="text/css">
+	<link rel="stylesheet" href="zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+
+	<script type="text/javascript" src="jquery.ztree.all-3.5.min.js"></script>
+	<!--script type="text/javascript" src="/js/zTree/js/jquery.ztree.excheck-3.5.js;jsessionid="></script-->
+	<!--
+	<script type="text/javascript" src="../../../js/jquery.ztree.exedit.js"></script>
+	-->
+<script type="text/javascript" src="menuctrl.js"></script>
+<SCRIPT type="text/javascript">
+		
+		//-->
+</SCRIPT>
+<style type="text/css">
+
+</style>
+</HEAD>
+
+<BODY>
+<!--
+<h1>Search Nodes</h1>
+<h6>[ File Path: core/searchNodes.html ]</h6>
+-->
+<!--Search: <input type="text" id="key" value="" class="empty" /><br/>-->
+<div class="content_wrap">
+	Search: <input type="text" id="key" value="" class="empty" /><br/>
+	<div class="zTreeDemoBackground left">
+		<ul id="treeMain" class="ztree"></ul>
+	</div>
+	<div class="right">
+		<ul id="treeResult" class="ztree"></ul>
+		
+	</div>
+	
+		<input type="radio" id="name" name="keyType" class="radio first" checked style="display:none" />
+		<input type="radio" id="level" name="keyType" class="radio" style="margin-left:68px;display:none;"  />
+		<input type="radio" id="id" name="keyType" class="radio" style="margin-left:68px;display:none;" />
+		<input type="radio" id="getNodeByParam" name="funType" class="radio first" style="display:none"/>
+		<input type="radio" id="getNodesByParam" name="funType" class="radio" style="margin-left:36px;display:none;" />
+		<input type="radio" id="getNodesByParamFuzzy" name="funType" class="radio" style="margin-left:36px;display:none;" checked />
+		<input type="radio" id="getNodesByFilter" name="funType" class="radio" style="margin-left:36px;display:none;"  />
+
+</div>
+</BODY>
+</HTML>
